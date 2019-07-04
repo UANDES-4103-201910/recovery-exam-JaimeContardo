@@ -1,0 +1,20 @@
+<p style="color: green;text-align: center"><%= flash[:removed] %></p>
+<div class="shopping-container">
+  <table>
+    <tr>
+      <th>Name</th>
+      <th>Price</th>
+      <th>Crust type</th>
+      <th>Actions</th>
+    </tr>
+  <% @list.each do |pizza| %>
+    <tr>
+      <td><%= pizza.name %></td>
+      <td>$<%= (pizza.recipe.price + pizza.crust.price).to_s %></td>
+      <td><%= pizza.crust.crust_type %></td>
+      <td><%= link_to "Remove", '/shopping?id=' + pizza.id.to_s, method: :delete ,style: "color:white;background-color:red;padding:5px;text-decoration:none" %></td>
+    </tr>
+  <% end %>
+  </table>
+  <%= link_to "Pay", '/delivery_info/new' %>
+</div>

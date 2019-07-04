@@ -1,0 +1,17 @@
+<div class="container text-center">
+  <%= form_for @delivery_info, url: "/delivery_info/create", method: "post" do |i| %>
+    <div>
+      <%= i.label :address_1, "Address Info" %>
+      <%= i.text_field :address_1 %>
+    </div>
+    <div>
+      <%= i.label :address_2, "Backup Address" %>
+      <%= i.text_field :address_2 %>
+    </div>
+    <div>
+      <%= i.label :phone, "Phone Number" %>
+      <%= i.text_field :phone %>
+    </div>
+    <%= i.submit "Go to Next Step" %>
+  <% end %>
+</div>
