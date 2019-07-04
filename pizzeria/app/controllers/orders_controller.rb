@@ -41,8 +41,7 @@ class OrdersController < ApplicationController
       OrderPizza.create(order_id:order.id, pizza_id: l.id)
     end
     cookies[:pizza_id] = nil
-    flash[:create] = "Your pizza is now being cooked"
-    redirect_to '/'
+    redirect_to orders_create_path
   end
 
   def delivery_info_new
